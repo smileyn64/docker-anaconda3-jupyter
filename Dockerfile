@@ -5,6 +5,10 @@ RUN /opt/conda/bin/conda install jupyter -y --quiet && \
     mkdir /opt/notebooks && \
     /opt/conda/bin/jupyter notebook --generate-config
 
+RUN conda install conda-forge::cdsapi
+
 COPY configgen.py /root/
+
+COPY backup.cdsapirc /root/
 
 ENTRYPOINT ["/bin/bash", "-c", "python /root/configgen.py"]
