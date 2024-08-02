@@ -1,9 +1,8 @@
 version: '2'
 services:
   anaconda3-jupyter:
+    image: anaconda3-jupyter
     container_name: anaconda3-jupyter
-    build:
-      context: .
     ports:
      - "8888:8888"
     environment:
